@@ -1,0 +1,52 @@
+.pizza
+  display: flex
+  flex-direction: column
+  justify-content: center
+  .item
+    border-top: 2px solid color(pizza_, border)
+    +wh(84%,84px)
+    display: flex
+    justify-content: space-between
+    align-items: center
+    font-family: 'R-Regular'
+    .text
+      font-family: 'R-Bold'
+    .descripion
+      font-family: 'R-Bold'
+    .counter
+      user-select: none
+      .decrease,
+      .increase
+        border: 1px solid color(pizza_, inc)
+        +wh(25px,25px)
+        box-sizing: border-box
+        text-align: center
+        padding: 0 3px
+        border-radius: 50%
+        display: inline-block
+        line-height: 22px
+        color: color(pizza_, inc)
+        cursor: pointer
+      .value
+        display: inline-block
+        width: 25px
+        text-align: center
+        margin-right: 5px
+    .buttons
+      font-size: 0.9em
+      .delete,
+      .restore
+        border: 1px solid
+        border-radius: 10px
+        padding: 2px 11px
+        cursor: pointer
+        user-select: none
+      .delete
+        border-color: color(pizza_, delete)
+        color: color(pizza_, delete_text)
+      .restore
+        border-color: color(pizza_, restore)
+        background-color: color(pizza_, restore)
+        color: #fff
+  .item:last-child
+    border-bottom: 2px solid color(pizza_, border)

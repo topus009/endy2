@@ -1,0 +1,23 @@
+mixin item_(text_, descripion_, src_)
+  .item
+    img(class='image' src= src_ alt=text_)
+    span.text= text_
+    span.descripion= descripion_
+    span.counter
+      span.decrease -
+      p.value
+      span.increase +
+    span.buttons
+      span.delete Удалить
+      span(class='restore hidden') Вернуть
+
+mixin bar_
+  div(class='bar' data-progress='')
+    .number №3208957205790
+    .line
+      .fill
+    .percent
+
+
+
+

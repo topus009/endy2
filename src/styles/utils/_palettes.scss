@@ -1,0 +1,23 @@
+// sass-lint:disable no-color-keywords, no-color-literals
+
+$palette: (
+  pizza_: (
+    border: #ededed,
+    inc: #ff0000,
+    delete: #bfbfbf,
+    delete_text: #a6a6a6,
+    restore: #ff0000,
+  ),
+);
+
+@function color($key, $tone: 'base') {
+  @if map-has-key($palette, $key) {
+    @if map-has-key(map-get($palette, $key), $tone) {
+      @return map-get(map-get($palette, $key), $tone);
+    } @else {
+      @error 'Oops, `#{$tone}` is not available in `#{map-get($palette, $key)}`';
+    }
+  } @else {
+    @error 'Ouch, `#{$key}` is not available in $palette';
+  }
+}

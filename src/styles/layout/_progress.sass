@@ -1,0 +1,39 @@
+.progress
+  margin-top: 89px
+  font-family: 'R-Bold'
+  font-size: 15px
+  .bar
+    display: flex
+    justify-content: space-between
+    +wh(500px,43px)
+    margin-bottom: 37px
+    position: relative
+    .line
+      position: relative
+      border-radius: 10px
+      border-width: 0
+      +wh(260px,24px)
+      overflow: hidden
+      &:after
+        content: '';
+        +wh(calc(100% - 2px),calc(100% - 2px))
+        position: absolute
+        top: 0
+        left: 0
+        border: 1px solid color(pizza_, delete)
+        border-radius: 10px
+      .fill
+        position: absolute
+        background-color: color(pizza_, inc)
+        top: -1px
+        height: calc(100% + 1px)
+        z-index: 1
+    .percent
+      position: absolute
+      bottom: -2px
+      left: 45%
+      font-family: 'R-Regular'
+      font-size: 15px
+  .bar:last-child
+    margin-bottom: 0
+
